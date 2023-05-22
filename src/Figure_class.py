@@ -6,8 +6,8 @@ class Figure:
         self.name = 'Figure'
 
     def general_check(self):
-        if self.side == 0:
-            return "Figure side cannot be zero"
+        if self.side <= 0:
+            return "Figure side cannot be of zero or negative value"
 
     # noinspection PyPropertyDefinition
     @property
