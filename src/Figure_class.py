@@ -1,3 +1,4 @@
+
 class Figure:
 
     def __init__(self, side):
@@ -8,15 +9,15 @@ class Figure:
         if self.side == 0:
             return "Figure side cannot be zero"
 
+    # noinspection PyPropertyDefinition
     @property
-    def area(self):
-        self.general_check()
-        return self.side * self.side
+    def area(self) -> float:
+        pass
 
     def add_area(self, figure_2):
         if not isinstance(figure_2, Figure):
             raise ValueError("Not a geometrical figure!")
         else:
-            total_figure_sum = self.area + figure_2.area
-            return total_figure_sum
+            total_figure_sum = float(self.area) + float(figure_2.area)
+            return float(f'{total_figure_sum:.2f}')
 
