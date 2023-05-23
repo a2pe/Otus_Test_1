@@ -25,10 +25,9 @@ def test_square_area_and_perimeter():
 
 def test_square_zero_value():
     """Testing  square creation with the side equal to 0"""
-    square = Square(0)
-    with pytest.raises(ValueError, match="No Square can be created with this side.") as error:
+    with pytest.raises(ValueError, match="No Square can be created with this side."):
+        square = Square(0)
         print(square.area)
-    assert error == "No Square can be created with this side."
 
 
 def test_square_add_another_square_area():
@@ -103,18 +102,20 @@ def test_triangle_add_another_figure_area():
 
 def test_value_error_triangle():
     """Testing area calculation for the triangle with incorrect sides"""
-    triangle = Triangle(1, 2, 3)
+
     with pytest.raises(ValueError, match="No Triangle can be created with the specified sides."):
+        triangle = Triangle(1, 2, 3)
         print(triangle.area)
 
 
 def test_triangle_zero_value():
     """Testing triangle and square creation with their sides equal to 0"""
-    triangle = Triangle(0, 1, 2)
+
     with pytest.raises(ValueError, match="No Triangle can be created with zero or negative side value.") as err:
+        triangle = Triangle(0, 1, 2)
         print(triangle.area)
     assert err.type == ValueError
-    assert str(err.value) == 'Error'
+    assert str(err.value) == 'No Triangle can be created with zero or negative side value.'
 
 
 def test_figure_value_error():
